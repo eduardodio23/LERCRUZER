@@ -1,17 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
 
 :root {
   color-scheme: light;
-  --ink: #292720;
-  --muted: #716e63;
-  --paper: #faf8f2;
-  --surface: #fffefa;
-  --olive: #596344;
-  --olive-dark: #414a32;
-  --gold: #bd9559;
-  --line: #e8e3d8;
-  --danger: #a33e32;
-  font-family: 'DM Sans', sans-serif;
+  --ink: #49372d;
+  --muted: #71685c;
+  --paper: #ede5d5;
+  --surface: #f7f3ea;
+  --olive: #283c2d;
+  --olive-dark: #1d2d21;
+  --gold: #a77b48;
+  --sand: #b0a080;
+  --line: #d9cebb;
+  --danger: #9b4134;
+  font-family: 'Inter', sans-serif;
   color: var(--ink);
   background: var(--paper);
   font-synthesis: none;
@@ -27,6 +28,7 @@ body {
   margin: 0;
   font-size: 16px;
   line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
 }
 
 button,
@@ -40,6 +42,11 @@ a {
   color: inherit;
 }
 
+::selection {
+  background: var(--olive);
+  color: var(--surface);
+}
+
 a:focus-visible,
 button:focus-visible,
 input:focus-visible,
@@ -50,17 +57,17 @@ textarea:focus-visible {
 }
 
 .page {
-  width: min(1120px, calc(100% - 40px));
+  width: min(1160px, calc(100% - 64px));
   margin: 0 auto;
-  padding: 72px 0 88px;
+  padding: 84px 0 100px;
 }
 
 .eyebrow {
-  margin: 0 0 12px;
+  margin: 0 0 14px;
   color: var(--olive);
   font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.16em;
+  font-weight: 600;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
 }
 
@@ -69,33 +76,33 @@ textarea:focus-visible {
 .section-title {
   margin: 0;
   font-family: 'Playfair Display', Georgia, serif;
-  font-weight: 600;
-  line-height: 1.12;
+  font-weight: 500;
+  line-height: 1.08;
 }
 
 .page-title {
   max-width: 760px;
-  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-size: clamp(2.7rem, 6vw, 5rem);
 }
 
 .section-title {
-  font-size: clamp(1.8rem, 4vw, 2.7rem);
+  font-size: clamp(1.9rem, 4vw, 3rem);
 }
 
 .lead {
   max-width: 680px;
-  margin: 20px 0 0;
+  margin: 22px 0 0;
   color: var(--muted);
-  font-size: 1.1rem;
+  font-size: 1.05rem;
 }
 
 .section {
-  margin-top: 54px;
+  margin-top: 68px;
 }
 
 .grid {
   display: grid;
-  gap: 20px;
+  gap: 22px;
 }
 
 .grid-two {
@@ -107,9 +114,9 @@ textarea:focus-visible {
 }
 
 .card {
-  padding: 26px;
+  padding: 30px;
   border: 1px solid var(--line);
-  border-radius: 12px;
+  border-radius: 3px;
   background: var(--surface);
 }
 
@@ -127,19 +134,23 @@ textarea:focus-visible {
 
 .button {
   display: inline-flex;
-  min-height: 48px;
+  min-height: 50px;
   align-items: center;
   justify-content: center;
-  padding: 11px 22px;
+  padding: 12px 24px;
   border: 1px solid var(--olive);
-  border-radius: 6px;
+  border-radius: 2px;
   background: var(--olive);
   color: #fff;
+  font-size: 0.84rem;
   font-weight: 600;
+  letter-spacing: 0.035em;
   text-decoration: none;
   cursor: pointer;
   transition:
     background-color 160ms ease,
+    color 160ms ease,
+    border-color 160ms ease,
     transform 160ms ease;
 }
 
@@ -159,7 +170,7 @@ textarea:focus-visible {
 
 .form {
   display: grid;
-  gap: 18px;
+  gap: 22px;
 }
 
 .form-row {
@@ -174,7 +185,7 @@ textarea:focus-visible {
 }
 
 .field label {
-  font-size: 0.92rem;
+  font-size: 0.88rem;
   font-weight: 600;
 }
 
@@ -182,12 +193,22 @@ textarea:focus-visible {
 .field select,
 .field textarea {
   width: 100%;
-  min-height: 48px;
-  padding: 10px 12px;
-  border: 1px solid #d8d2c5;
-  border-radius: 6px;
-  background: #fff;
+  min-height: 50px;
+  padding: 11px 13px;
+  border: 1px solid #cfc3ae;
+  border-radius: 2px;
+  background: #fbf9f4;
   color: var(--ink);
+  transition:
+    border-color 160ms ease,
+    background-color 160ms ease;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  border-color: var(--olive);
+  background: #fffefa;
 }
 
 .field textarea {
@@ -202,9 +223,9 @@ textarea:focus-visible {
 
 .notice {
   padding: 16px 18px;
-  border: 1px solid #ccd5c1;
-  border-radius: 8px;
-  background: #f0f4eb;
+  border: 1px solid #b9c3ae;
+  border-radius: 2px;
+  background: #e6eadf;
   color: var(--olive-dark);
 }
 
@@ -218,12 +239,24 @@ textarea:focus-visible {
 
 @media (max-width: 720px) {
   .page {
-    padding: 50px 0 64px;
+    width: min(100% - 40px, 560px);
+    padding: 58px 0 72px;
   }
 
   .grid-two,
   .grid-three,
   .form-row {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
   }
 }

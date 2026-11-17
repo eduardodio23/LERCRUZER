@@ -1,20 +1,29 @@
 .event-card {
   display: flex;
-  min-height: 275px;
+  min-height: 300px;
   flex-direction: column;
+  transition:
+    border-color 180ms ease,
+    transform 180ms ease;
+}
+
+.event-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--gold);
 }
 
 .event-index {
-  margin-bottom: 20px;
-  color: var(--olive);
+  margin-bottom: 24px;
+  color: var(--gold);
   font-size: 0.76rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
+  font-weight: 600;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
 }
 
 .event-card h2 {
   font-size: 1.5rem;
+  font-weight: 500;
 }
 
 .event-card a {
@@ -35,9 +44,10 @@
   align-items: center;
   justify-content: space-between;
   gap: 28px;
-  padding: 32px;
-  border-radius: 12px;
-  background: #eeece2;
+  padding: 36px;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  background: #e5dcc9;
 }
 
 .event-callout .muted {
@@ -49,5 +59,6 @@
   .event-callout {
     align-items: flex-start;
     flex-direction: column;
+    padding: 26px;
   }
 }

@@ -2,11 +2,11 @@
   display: grid;
   grid-template-columns: 0.75fr 1.25fr;
   align-items: start;
-  gap: 48px;
+  gap: 56px;
 }
 
 .contact-aside {
-  padding-top: 16px;
+  padding-top: 20px;
 }
 
 .contact-aside .section-title {
@@ -15,10 +15,11 @@
 
 .text-link {
   display: inline-block;
-  margin-top: 18px;
+  margin-top: 20px;
   color: var(--olive);
   font-weight: 700;
   text-decoration: none;
+  overflow-wrap: anywhere;
 }
 
 .text-link:hover {
@@ -28,10 +29,10 @@
 
 .form-card {
   display: grid;
-  gap: 22px;
+  gap: 24px;
   padding: clamp(20px, 4vw, 36px);
   border: 1px solid var(--line);
-  border-radius: 12px;
+  border-radius: 3px;
   background: var(--surface);
 }
 
@@ -42,6 +43,6 @@
 @media (max-width: 760px) {
   .contact-layout {
     grid-template-columns: 1fr;
-    gap: 28px;
+    gap: 24px;
   }
 }

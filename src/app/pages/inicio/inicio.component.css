@@ -1,54 +1,57 @@
 .home-hero {
   display: grid;
-  min-height: 570px;
-  grid-template-columns: 1.05fr 0.95fr;
-  background: #f0ede3;
+  min-height: 620px;
+  grid-template-columns: 1.04fr 0.96fr;
+  background: var(--paper);
 }
 
 .hero-copy {
   align-self: center;
-  width: min(620px, 100%);
+  width: min(660px, 100%);
   justify-self: end;
-  padding: 72px 52px 72px 24px;
+  padding: 80px 64px 80px 32px;
 }
 
 .hero-title {
   max-width: 620px;
-  font-size: clamp(3rem, 6vw, 5.2rem);
+  font-size: clamp(3.2rem, 6.3vw, 5.7rem);
 }
 
 .hero-title span {
-  color: var(--olive);
+  color: var(--gold);
 }
 
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 30px;
+  gap: 14px;
+  margin-top: 34px;
 }
 
 .hero-art {
   position: relative;
   display: grid;
-  min-height: 420px;
+  min-height: 500px;
   overflow: hidden;
   place-items: center;
-  background: radial-gradient(
-    ellipse at 50% 45%,
-    #e8d8ba 0 30%,
-    #b4a07d 31% 32%,
-    #72795e 33% 58%,
-    #515944 59%
-  );
+  background:
+    radial-gradient(
+      circle at 52% 45%,
+      #f4eddf 0 25%,
+      #d8c8aa 25.4% 27%,
+      #a77b48 27.3% 28%,
+      #283c2d 28.4% 55%,
+      #1d2d21 55.4%
+    ),
+    linear-gradient(145deg, #283c2d, #1d2d21);
 }
 
 .plate {
   position: absolute;
   display: block;
-  width: min(34vw, 340px);
+  width: min(34vw, 370px);
   aspect-ratio: 1;
-  border: 1px solid rgb(255 255 255 / 55%);
+  border: 1px solid rgb(237 229 213 / 48%);
   border-radius: 50%;
 }
 
@@ -57,9 +60,9 @@
 }
 
 .plate-two {
-  width: min(24vw, 240px);
+  width: min(23vw, 250px);
   transform: translate(30%, 25%);
-  border-color: rgb(255 255 255 / 30%);
+  border-color: rgb(237 229 213 / 30%);
 }
 
 .art-caption {
@@ -68,14 +71,14 @@
   bottom: 24px;
   color: #fff;
   font-family: 'Playfair Display', Georgia, serif;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
 }
 
 .home-more {
   display: grid;
   grid-template-columns: 0.8fr 1.2fr;
   align-items: start;
-  gap: 48px;
+  gap: 60px;
 }
 
 .home-more .lead {
@@ -85,24 +88,34 @@
 .home-cards {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 14px;
+  gap: 16px;
 }
 
 .home-card {
   display: flex;
-  min-height: 240px;
+  min-height: 260px;
   flex-direction: column;
-  padding: 22px;
+  padding: 24px;
   border: 1px solid var(--line);
-  border-radius: 10px;
+  border-radius: 2px;
   background: var(--surface);
   text-decoration: none;
+  transition:
+    border-color 180ms ease,
+    transform 180ms ease,
+    background-color 180ms ease;
+}
+
+.home-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--gold);
+  background: #fbf8f1;
 }
 
 .home-card h3 {
   margin: 20px 0 8px;
   font-family: 'Playfair Display', Georgia, serif;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
 }
 
 .home-card p {
@@ -115,7 +128,7 @@
 .text-link {
   color: var(--olive);
   font-size: 0.82rem;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .text-link {
@@ -131,24 +144,45 @@
 
   .hero-copy {
     justify-self: start;
-    padding: 64px 24px;
+    padding: 70px 32px;
   }
 
   .hero-art {
-    min-height: 360px;
+    min-height: 400px;
   }
 
   .plate {
-    width: min(64vw, 300px);
+    width: min(64vw, 340px);
   }
 
   .plate-two {
-    width: min(45vw, 210px);
+    width: min(45vw, 230px);
+  }
+
+  .home-more {
+    gap: 34px;
   }
 }
 
 @media (max-width: 640px) {
   .home-cards {
     grid-template-columns: 1fr;
+  }
+
+  .hero-copy {
+    padding: 56px 20px;
+  }
+
+  .hero-title {
+    font-size: clamp(2.9rem, 13vw, 4.3rem);
+  }
+
+  .hero-art {
+    min-height: 330px;
+  }
+
+  .art-caption {
+    right: 20px;
+    bottom: 18px;
   }
 }

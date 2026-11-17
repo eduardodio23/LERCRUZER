@@ -6,7 +6,7 @@
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
   align-items: center;
-  gap: 56px;
+  gap: 64px;
 }
 
 .story-copy > p:not(.eyebrow) {
@@ -15,11 +15,11 @@
 
 blockquote {
   margin: 0;
-  padding: 32px;
-  border-left: 3px solid var(--gold);
-  background: #f0ede3;
+  padding: 34px;
+  border-left: 2px solid var(--gold);
+  background: #e5dcc9;
   font-family: 'Playfair Display', Georgia, serif;
-  font-size: clamp(1.35rem, 3vw, 2rem);
+  font-size: clamp(1.45rem, 3vw, 2.15rem);
   line-height: 1.4;
 }
 
@@ -46,10 +46,10 @@ blockquote cite {
 .team-card {
   display: flex;
   align-items: center;
-  gap: 24px;
-  padding: 28px;
+  gap: 28px;
+  padding: 30px;
   border: 1px solid var(--line);
-  border-radius: 12px;
+  border-radius: 3px;
   background: var(--surface);
 }
 
@@ -71,7 +71,7 @@ blockquote cite {
   flex: 0 0 auto;
   place-items: center;
   border-radius: 50%;
-  background: #e9e4d7;
+  background: #e4dac7;
   color: var(--olive);
   font-family: 'Playfair Display', Georgia, serif;
   font-size: 2.5rem;
@@ -83,8 +83,9 @@ blockquote cite {
   justify-content: space-between;
   gap: 24px;
   padding: 30px;
-  border-radius: 12px;
-  background: #eeece2;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  background: #e5dcc9;
 }
 
 @media (max-width: 760px) {
@@ -103,5 +104,9 @@ blockquote cite {
   .team-card {
     align-items: flex-start;
     flex-direction: column;
+  }
+
+  blockquote {
+    padding: 24px;
   }
 }
