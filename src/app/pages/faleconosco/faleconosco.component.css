@@ -1,0 +1,47 @@
+.contact-layout {
+  display: grid;
+  grid-template-columns: 0.75fr 1.25fr;
+  align-items: start;
+  gap: 48px;
+}
+
+.contact-aside {
+  padding-top: 16px;
+}
+
+.contact-aside .section-title {
+  margin-bottom: 14px;
+}
+
+.text-link {
+  display: inline-block;
+  margin-top: 18px;
+  color: var(--olive);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.text-link:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.form-card {
+  display: grid;
+  gap: 22px;
+  padding: clamp(20px, 4vw, 36px);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--surface);
+}
+
+.form-card .notice {
+  margin-bottom: 2px;
+}
+
+@media (max-width: 760px) {
+  .contact-layout {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+}

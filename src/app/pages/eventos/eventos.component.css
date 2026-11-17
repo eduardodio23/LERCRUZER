@@ -1,0 +1,53 @@
+.event-card {
+  display: flex;
+  min-height: 275px;
+  flex-direction: column;
+}
+
+.event-index {
+  margin-bottom: 20px;
+  color: var(--olive);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.event-card h2 {
+  font-size: 1.5rem;
+}
+
+.event-card a {
+  margin-top: auto;
+  padding-top: 20px;
+  color: var(--olive);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.event-card a:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.event-callout {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  padding: 32px;
+  border-radius: 12px;
+  background: #eeece2;
+}
+
+.event-callout .muted {
+  max-width: 620px;
+  margin-bottom: 0;
+}
+
+@media (max-width: 720px) {
+  .event-callout {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}

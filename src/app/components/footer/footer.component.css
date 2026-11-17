@@ -1,0 +1,60 @@
+.site-footer {
+  padding: 42px 24px 24px;
+  background: #292d22;
+  color: #f7f5ee;
+}
+
+.footer-inner {
+  display: grid;
+  width: min(1120px, 100%);
+  margin: 0 auto;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 24px;
+}
+
+.footer-brand {
+  color: #fff;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.55rem;
+  text-decoration: none;
+}
+
+.footer-inner p {
+  max-width: 360px;
+  margin: 8px 0 0;
+  color: #d3d1c8;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  gap: 10px 18px;
+}
+
+.footer-links a {
+  color: #f7f5ee;
+  text-decoration-color: transparent;
+  text-underline-offset: 4px;
+}
+
+.footer-links a:hover {
+  text-decoration-color: currentColor;
+}
+
+.copyright {
+  grid-column: 1 / -1;
+  padding-top: 18px;
+  border-top: 1px solid #54574e;
+  color: #d3d1c8;
+}
+
+@media (max-width: 640px) {
+  .footer-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .copyright {
+    grid-column: auto;
+  }
+}

@@ -1,0 +1,133 @@
+<section class="page">
+  <header>
+    <p class="eyebrow">Vai ser um prazer receber você</p>
+    <h1 class="page-title">Reserve sua mesa</h1>
+    <p class="lead">
+      Conte um pouco sobre a sua visita. Nossa equipe poderá confirmar a disponibilidade e combinar
+      os detalhes.
+    </p>
+  </header>
+
+  <div class="reservation-layout section">
+    <div class="reservation-form-card">
+      @if (confirmation) {
+        <section class="notice confirmation" role="status" aria-live="polite">
+          <h2>Resumo da sua solicitação</h2>
+          <p><strong>Nome:</strong> {{ confirmation.name }}</p>
+          <p><strong>Data:</strong> {{ formatDate(confirmation.date) }}</p>
+          <p><strong>Horário:</strong> {{ confirmation.time }}</p>
+          <p><strong>Pessoas:</strong> {{ confirmation.guests }}</p>
+          <p><strong>Ambiente:</strong> {{ confirmation.environment }}</p>
+          <p><strong>Telefone:</strong> {{ confirmation.phone }}</p>
+          <p class="confirmation-note">
+            Esta solicitação foi exibida apenas nesta página. Ela ainda não foi enviada ao
+            restaurante nem confirma uma reserva; fale com a equipe para verificar a
+            disponibilidade.
+          </p>
+        </section>
+      }
+
+      <form
+        class="form"
+        [formGroup]="reservationForm"
+        (ngSubmit)="onSubmit()"
+        (input)="confirmation = null"
+        (change)="confirmation = null"
+        novalidate
+      >
+        <div class="form-row">
+          <div class="field">
+            <label for="reservation-date">Data</label>
+            <input id="reservation-date" type="date" formControlName="date" [min]="minDate" />
+            @if (reservationForm.controls.date.invalid && reservationForm.controls.date.touched) {
+              <span class="field-error">Escolha uma data a partir de hoje.</span>
+            }
+          </div>
+          <div class="field">
+            <label for="reservation-time">Horário</label>
+            <select id="reservation-time" formControlName="time">
+              <option value="" disabled>Selecione um horário</option>
+              @for (time of timeSlots; track time) {
+                <option [value]="time">{{ time }}</option>
+              }
+            </select>
+            @if (reservationForm.controls.time.invalid && reservationForm.controls.time.touched) {
+              <span class="field-error">Selecione um horário.</span>
+            }
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="field">
+            <label for="reservation-guests">Quantidade de pessoas</label>
+            <input
+              id="reservation-guests"
+              type="number"
+              formControlName="guests"
+              min="1"
+              max="12"
+            />
+            @if (
+              reservationForm.controls.guests.invalid && reservationForm.controls.guests.touched
+            ) {
+              <span class="field-error">Informe de 1 a 12 pessoas.</span>
+            }
+          </div>
+          <div class="field">
+            <label for="reservation-environment">Preferência de ambiente</label>
+            <select id="reservation-environment" formControlName="environment">
+              <option value="" disabled>Selecione um ambiente</option>
+              <option value="Salão Principal">Salão Principal</option>
+              <option value="Varanda">Varanda</option>
+              <option value="Área VIP">Área VIP</option>
+            </select>
+            @if (
+              reservationForm.controls.environment.invalid &&
+              reservationForm.controls.environment.touched
+            ) {
+              <span class="field-error">Selecione sua preferência de ambiente.</span>
+            }
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="field">
+            <label for="reservation-name">Nome</label>
+            <input id="reservation-name" type="text" formControlName="name" autocomplete="name" />
+            @if (reservationForm.controls.name.invalid && reservationForm.controls.name.touched) {
+              <span class="field-error">Informe seu nome (mínimo de 2 caracteres).</span>
+            }
+          </div>
+          <div class="field">
+            <label for="reservation-phone">Telefone</label>
+            <input
+              id="reservation-phone"
+              type="tel"
+              formControlName="phone"
+              autocomplete="tel"
+              placeholder="(00) 00000-0000"
+            />
+            @if (reservationForm.controls.phone.invalid && reservationForm.controls.phone.touched) {
+              <span class="field-error">Informe um telefone válido.</span>
+            }
+          </div>
+        </div>
+
+        <button class="button" type="submit">Ver resumo da solicitação</button>
+      </form>
+    </div>
+
+    <aside class="reservation-aside">
+      <p class="eyebrow">Um pequeno lembrete</p>
+      <h2 class="section-title">Cada detalhe importa.</h2>
+      <p>
+        A preferência de ambiente está sujeita à disponibilidade. Para grupos maiores ou ocasiões
+        especiais, fale com a nossa equipe antes de enviar sua solicitação.
+      </p>
+      <p>
+        O formulário apresenta um resumo local e não envia dados nem confirma uma mesa. A integração
+        de atendimento pode ser conectada posteriormente.
+      </p>
+    </aside>
+  </div>
+</section>

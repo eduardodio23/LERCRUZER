@@ -1,0 +1,107 @@
+.page-heading {
+  max-width: 780px;
+}
+
+.story {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: 56px;
+}
+
+.story-copy > p:not(.eyebrow) {
+  color: var(--muted);
+}
+
+blockquote {
+  margin: 0;
+  padding: 32px;
+  border-left: 3px solid var(--gold);
+  background: #f0ede3;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.35rem, 3vw, 2rem);
+  line-height: 1.4;
+}
+
+blockquote cite {
+  display: block;
+  margin-top: 18px;
+  color: var(--muted);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.85rem;
+  font-style: normal;
+}
+
+.values {
+  margin-top: 22px;
+}
+
+.team {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  align-items: center;
+  gap: 40px;
+}
+
+.team-card {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 28px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--surface);
+}
+
+.team-card h3 {
+  margin: 0 0 8px;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.4rem;
+}
+
+.team-card p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.team-monogram {
+  display: grid;
+  width: 90px;
+  height: 90px;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: 50%;
+  background: #e9e4d7;
+  color: var(--olive);
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 2.5rem;
+}
+
+.closing-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 30px;
+  border-radius: 12px;
+  background: #eeece2;
+}
+
+@media (max-width: 760px) {
+  .story,
+  .team {
+    grid-template-columns: 1fr;
+  }
+
+  .closing-card {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 520px) {
+  .team-card {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}

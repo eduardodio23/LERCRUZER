@@ -1,0 +1,154 @@
+.home-hero {
+  display: grid;
+  min-height: 570px;
+  grid-template-columns: 1.05fr 0.95fr;
+  background: #f0ede3;
+}
+
+.hero-copy {
+  align-self: center;
+  width: min(620px, 100%);
+  justify-self: end;
+  padding: 72px 52px 72px 24px;
+}
+
+.hero-title {
+  max-width: 620px;
+  font-size: clamp(3rem, 6vw, 5.2rem);
+}
+
+.hero-title span {
+  color: var(--olive);
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+.hero-art {
+  position: relative;
+  display: grid;
+  min-height: 420px;
+  overflow: hidden;
+  place-items: center;
+  background: radial-gradient(
+    ellipse at 50% 45%,
+    #e8d8ba 0 30%,
+    #b4a07d 31% 32%,
+    #72795e 33% 58%,
+    #515944 59%
+  );
+}
+
+.plate {
+  position: absolute;
+  display: block;
+  width: min(34vw, 340px);
+  aspect-ratio: 1;
+  border: 1px solid rgb(255 255 255 / 55%);
+  border-radius: 50%;
+}
+
+.plate-one {
+  transform: translate(-12%, -8%);
+}
+
+.plate-two {
+  width: min(24vw, 240px);
+  transform: translate(30%, 25%);
+  border-color: rgb(255 255 255 / 30%);
+}
+
+.art-caption {
+  position: absolute;
+  right: 28px;
+  bottom: 24px;
+  color: #fff;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.1rem;
+}
+
+.home-more {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  align-items: start;
+  gap: 48px;
+}
+
+.home-more .lead {
+  font-size: 1rem;
+}
+
+.home-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.home-card {
+  display: flex;
+  min-height: 240px;
+  flex-direction: column;
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--surface);
+  text-decoration: none;
+}
+
+.home-card h3 {
+  margin: 20px 0 8px;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.2rem;
+}
+
+.home-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.card-number,
+.text-link {
+  color: var(--olive);
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.text-link {
+  margin-top: auto;
+  padding-top: 18px;
+}
+
+@media (max-width: 900px) {
+  .home-hero,
+  .home-more {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-copy {
+    justify-self: start;
+    padding: 64px 24px;
+  }
+
+  .hero-art {
+    min-height: 360px;
+  }
+
+  .plate {
+    width: min(64vw, 300px);
+  }
+
+  .plate-two {
+    width: min(45vw, 210px);
+  }
+}
+
+@media (max-width: 640px) {
+  .home-cards {
+    grid-template-columns: 1fr;
+  }
+}
